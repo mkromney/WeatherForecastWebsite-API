@@ -4,10 +4,25 @@ body {
     padding: 0;
   }
   
+h2 {
+  margin: 0;
+}
+
+div.row {
+  margin: 1;
+}
+
   .header {
     background-color: #202a2c;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .day-header {
+    background-color: #202a2c;
+    color: #fff;
+    padding: 10px;
     text-align: center;
   }
   
@@ -40,21 +55,21 @@ body {
   /* for the locations column */
   .column.locations {
     flex-basis: 25%;
-    padding: 20px;
+    padding: 1px;
     box-sizing: border-box;
   }
   
 /* for the  city that was selected column */
   .column.forecast {
   flex-basis: 75%;
-  padding: 20px;
+  padding: 1px;
   box-sizing: border-box;
   }
 
   /* for the forecast column */
   .column.forecast {
     flex-basis: 75%;
-    padding: 20px;
+    padding: 1px;
     box-sizing: border-box;
   }
   
@@ -69,12 +84,14 @@ body {
   .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
-    grid-gap: 10px; /* Adjust the gap between columns if desired */
+    grid-gap: 25px; /* Adjust the gap between columns if desired */
+    margin-bottom: 30px;
   }
   
   .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+  
   

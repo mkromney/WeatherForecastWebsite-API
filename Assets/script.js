@@ -1,5 +1,7 @@
 
 
+
+
 // Retrieves search history from local storage
 var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
@@ -7,7 +9,7 @@ var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 function addCityToHistory(cityName) {
   searchHistory.push(cityName);
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-}
+};
 
 // Function to clear the search history
 function clearSearchHistory(event) {
@@ -16,7 +18,7 @@ function clearSearchHistory(event) {
   localStorage.removeItem("searchHistory");
   var cityList = document.getElementById("cityList");
   cityList.innerHTML = "";
-}
+};
 
 // Function to handle the search action
 function searchCity(event) {
@@ -33,8 +35,9 @@ function searchCity(event) {
 
     // Clear the input field
     input.value = "";
-  }
-}
+    };
+  };
+
 
 // The concatenation below makes it so you can search any city. //
 function searchAPI(cityName) {
@@ -48,25 +51,47 @@ function searchAPI(cityName) {
     .then(function(data){
       //clear the data  here //
       clearWeatherData()
-      
+    
 
       console.log(data)
-      $(".grid-item").each(function(i, el) { // el is back to vanilla javascript
+      $(".grid-item").each(function(i, el) {
+        var $el = $(el);
+      
+        var $currentCity = $("<div/>");
+        $currentCity.addClass("forecast-city");
+        $currentCity.text(data.city.name);
+        $currentCity.appendTo($el);
 
-        var $el = $(el); // change back to jquery
-        var $temp = $("<div/>"); // document.createElement
-        $temp.addClass("forecast-temp")
-        $temp.text(data.list[2+(i*8)].main.temp)
-        $temp.appendTo($el)
-        // you now need to console log the other details and pull the date/time information
+        var $currentDateTime = $("<div/>");
+        $currentDateTime.addClass("forecast-date");
+        $currentDateTime.text(data.list[2+(i*8)].dt_txt);
+        $currentDateTime.appendTo($el);
+      
+        var $icon = $("<div/>");
+        $icon.addClass("forecast-icon");
+        $icon.text(data.list[2+(i*8)].weather[0].icon);
+        $icon.appendTo($el);
+      
+        var $temp = $("<div/>");
+        $temp.addClass("forecast-temp");
+        $temp.text(data.list[2+(i*8)].main.temp);
+        $temp.appendTo($el);
+      
+        var $humid = $("<div/>");
+        $humid.addClass("forecast-humidity");
+        $humid.text(data.list[2+(i*8)].main.humidity);
+        $humid.appendTo($el);
+      
+        var $wind = $("<div/>");
+        $wind.addClass("forecast-wind");
+        $wind.text(data.list[2+(i*8)].wind.speed);
+        $wind.appendTo($el);
+      
       });
-    })
+    });
+  }
 // debugger; // **Remove when done with this** //
-
-
-}
-
-
+  
 
 // Loads the search history onto the page
 window.addEventListener("DOMContentLoaded", function () {
@@ -96,10 +121,17 @@ var clearSearchButton = document.getElementById("clearSearchButton");
 clearSearchButton.addEventListener("click", function(event) { clearSearchHistory(event) });
 
 
-function clearWeatherData () {
-  $("div.forecast-temp").remove();
 
-}
+function clearWeatherData () {
+  $("div.forecast-city").remove();
+  $("div.forecast-date").remove();
+  $("div.forecast-icon").remove();
+  $("div.forecast-temp").remove();
+  $("div.forecast-humidity").remove();
+  $("div.forecast-wind").remove();
+};
+
+
 ///////////////////////////////////////////////////////////////////
 
 
