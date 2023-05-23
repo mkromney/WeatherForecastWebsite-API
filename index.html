@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <link rel="Weather API" href="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={40e8f4e7cce1a052fa34799e8403ed4a}"/>
+  
   <!--Weather API and Key is above-->
   
 
@@ -35,17 +35,17 @@
       <div class="container"></div>
       <div class="column locations">
         <h2>Search for a City</h2>
-        <form id="city-search" class="btn">
+        <div id="city-search" class="btn">
           <input type="text" id="cityInput" placeholder="Enter city name">
           <button id="searchButton" class="btn">Search</button>
           <div id="resultContainer">
             <h3>Search History</h3>
-            <ul id="cityList">
+            <ul id="cityList" class="btn">
               <!--LIST previously Searched CITIES-->
             </ul>
             <button id="clearSearchButton" class="btn">Clear Search History</button>
           </div>
-        </form>
+        </div>
         </div>
       
 
@@ -70,7 +70,7 @@
         </div>
         <div class="rows">
           <div class="grid-container">
-            <div class="grid-item">Selected City Today's Forecast</div>
+            <div class="grid-item">Selected City's Current Weather</div>
               
         </div>
 
@@ -95,15 +95,13 @@
         <div class="rows">
           <div class="grid-container">
             <div class="grid-item">Day2</div>
-              <!-- need to connec the API here.-->
+              <!-- need to connect the API here.-->
             <div class="grid-item">Day3</div>
-              <!-- need to connec the API here.-->
+              <!-- need to connect the API here.-->
             <div class="grid-item">Day4</div>
-              <!-- need to connec the API here.--> 
+              <!-- need to connect the API here.--> 
             <div class="grid-item">Day5</div>
-              <!-- need to connec the API here.-->
-            <div class="grid-item">Day6</div>
-              <!-- need to connec the API here.-->
+              <!-- need to connect the API here.-->
           </div>
         </div>
       </div>

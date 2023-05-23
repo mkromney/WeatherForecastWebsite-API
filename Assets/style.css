@@ -26,6 +26,8 @@ body {
     margin: 5px 0;
   }
 
+  
+
   .btn {
     font-size: 1.3rem;
     padding: 6px 5px;
@@ -34,7 +36,6 @@ body {
     margin: 5px 0;
 
   }
-
 
   /* for the locations column */
   .column.locations {
@@ -69,10 +70,6 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
     grid-gap: 10px; /* Adjust the gap between columns if desired */
-  }
-  
-  .grid-item {
-    /* Add styling for the grid items as needed */
   }
   
   .row {
