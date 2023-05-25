@@ -32,6 +32,7 @@ div.row {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
   }
 
   #cityInput {
@@ -56,7 +57,7 @@ div.row {
   /* for the locations column */
   .column.locations {
     flex-basis: 25%;
-    padding: 1px;
+    padding: 20px;
     box-sizing: border-box;
   }
   
