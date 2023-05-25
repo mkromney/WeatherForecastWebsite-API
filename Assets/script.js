@@ -56,17 +56,20 @@ function searchAPI(cityName) {
       console.log(data)
       $(".grid-item").each(function(i, el) {
         var $el = $(el);
+        var label
+
       
         var $currentCity = $("<div/>");
         $currentCity.addClass("forecast-city");
-        $currentCity.text(data.city.name);
+        $currentCity.text("City: "+data.city.name);
         $currentCity.appendTo($el);
 
         var $currentDateTime = $("<div/>");
         $currentDateTime.addClass("forecast-date");
-        $currentDateTime.text(data.list[2+(i*8)].dt_txt);
+        $currentDateTime.text("Date: "+data.list [2+(i*8)].dt_txt);
         $currentDateTime.appendTo($el);
-      
+       
+        //create an image class, instead of a div google fonts, converts conditions to google.//
         var $icon = $("<div/>");
         $icon.addClass("forecast-icon");
         $icon.text(data.list[2+(i*8)].weather[0].icon);
@@ -74,17 +77,17 @@ function searchAPI(cityName) {
       
         var $temp = $("<div/>");
         $temp.addClass("forecast-temp");
-        $temp.text(data.list[2+(i*8)].main.temp);
+        $temp.text("Temp: "+data.list[2+(i*8)].main.temp+"F");
         $temp.appendTo($el);
       
         var $humid = $("<div/>");
         $humid.addClass("forecast-humidity");
-        $humid.text(data.list[2+(i*8)].main.humidity);
+        $humid.text("Humidity: "+data.list[2+(i*8)].main.humidity+"%");
         $humid.appendTo($el);
       
         var $wind = $("<div/>");
         $wind.addClass("forecast-wind");
-        $wind.text(data.list[2+(i*8)].wind.speed);
+        $wind.text("Wind: "+data.list[2+(i*8)].wind.speed+"mph");
         $wind.appendTo($el);
       
       });
