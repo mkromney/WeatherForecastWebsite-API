@@ -66,13 +66,13 @@ function searchAPI(cityName) {
 
         var $currentDateTime = $("<div/>");
         $currentDateTime.addClass("forecast-date");
-        $currentDateTime.text("Date: "+data.list [2+(i*8)].dt_txt);
+        $currentDateTime.text("Date/Time: "+data.list [2+(i*8)].dt_txt);
         $currentDateTime.appendTo($el);
        
         //create an image class, instead of a div google fonts, converts conditions to google.//
-        var $icon = $("<div/>");
+        var $icon = $("<img/>");
         $icon.addClass("forecast-icon");
-        $icon.text(data.list[2+(i*8)].weather[0].icon);
+        $icon.attr("src", "http://openweathermap.org/img/w/" + data.list[2+(i*8)].weather[0].icon + ".png");
         $icon.appendTo($el);
       
         var $temp = $("<div/>");
@@ -128,7 +128,7 @@ clearSearchButton.addEventListener("click", function(event) { clearSearchHistory
 function clearWeatherData () {
   $("div.forecast-city").remove();
   $("div.forecast-date").remove();
-  $("div.forecast-icon").remove();
+  $("img.forecast-icon").remove();
   $("div.forecast-temp").remove();
   $("div.forecast-humidity").remove();
   $("div.forecast-wind").remove();

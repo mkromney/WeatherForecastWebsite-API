@@ -43,8 +43,6 @@ div.row {
     margin: 5px 0;
   }
 
-  
-
   .btn {
     font-size: 1.3rem;
     padding: 6px 5px;
@@ -75,6 +73,10 @@ div.row {
     box-sizing: border-box;
   }
   
+  p.alert {
+    color: crimson;
+  }
+
   .locations {
     background-color: #f2f2f2;
   }
