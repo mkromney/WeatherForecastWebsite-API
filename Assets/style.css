@@ -17,6 +17,7 @@ div.row {
     color: #fff;
     padding: 20px;
     padding-left: 20;
+    height: 200px;
     text-align: center;
   }
 
@@ -28,6 +29,7 @@ div.row {
   }
   
   .container {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -55,6 +57,7 @@ div.row {
   /* for the locations column */
   .column.locations {
     flex-basis: 25%;
+    height: 800px;
     padding: 20px;
     box-sizing: border-box;
   }
@@ -62,7 +65,8 @@ div.row {
 /* for the  city that was selected column */
   .column.forecast {
   flex-basis: 75%;
-  padding: 1px;
+  height: 800px;
+  padding: 10px;
   box-sizing: border-box;
   }
 
