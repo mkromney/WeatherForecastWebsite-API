@@ -17,7 +17,7 @@ div.row {
     color: #fff;
     padding: 20px;
     padding-left: 20;
-    height: 200px;
+    height: flex;
     text-align: center;
   }
 
@@ -99,6 +99,7 @@ div.row {
   .row {
     display: flex;
     justify-content: space-between;
+    height: 600;
     margin-bottom: 10px;
   }
   
