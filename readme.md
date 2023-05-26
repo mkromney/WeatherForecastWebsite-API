@@ -1,4 +1,4 @@
-# Maridon-HW6-Maridon-HW6-WeatherForecastWebsite-API
+# Maridon-HW6-WeatherForecastWebsite-API
  Homework 6: Simple Interactive Weather Forecaster Using an API
 
 ## Description & Functionality
